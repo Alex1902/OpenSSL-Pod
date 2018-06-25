@@ -16,10 +16,7 @@ Pod::Spec.new do |s|
     SDKVERSION=`xcrun --sdk iphoneos --show-sdk-version 2> /dev/null`
 
     BASEPATH="${PWD}"
-    
-    echo "${BASEPATH}"
-    cd "${BASEPATH}"
-    
+
     CURRENTPATH="${TMPDIR}/openssl"
     ARCHS="i386 x86_64 armv7 armv7s arm64"
     DEVELOPER=`xcode-select -print-path`
@@ -27,7 +24,6 @@ Pod::Spec.new do |s|
     mkdir -p "${CURRENTPATH}"
     mkdir -p "${CURRENTPATH}/bin"
 
-    cp "file.tgz" "${CURRENTPATH}/file.tgz"
     cd "${CURRENTPATH}"
     tar -xzf file.tgz
     cd "openssl-${VERSION}"
